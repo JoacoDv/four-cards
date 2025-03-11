@@ -16,11 +16,15 @@
 <body>
   
   <header>
-    <h2>Reliable, efficient delivery</h2>
-    <h1>Powered by Technology</h1>
+    <section> 
+      <h2>Reliable, efficient delivery</h2>
+      <h1>Powered by Technology</h1>
+    </section>
 
-    <p>Our Artificial Intelligence powered tools use millions of project data</p> 
-    <p> points to ensure that your project is successful</p>
+    <section>
+      <p>Our Artificial Intelligence powered tools use millions of project data</p> 
+      <p> points to ensure that your project is successful</p>
+    </section>
   </header>
 
   <main>
@@ -48,6 +52,24 @@
     </div>
   </main>
   
+  <script type="module">
+    import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm"
+    const texts = document.querySelectorAll("section")
+    const cards = document.querySelectorAll("div")
+    let delayTexts= 0;
+    let delayCards = 0.6;
+
+    texts.forEach(text => {
+      animate(text, {y: [100, 0], opacity: [0,1]}, {ease: "easeOut", duration: .3, delay: delayTexts})
+      delayTexts += .3
+    })
+
+    cards.forEach(card => {
+      animate(card, {x: [-15, 0],scale: [.4, 1], opacity: [0,1]}, {ease: "easeOut", duration: .3, delay: delayCards})
+      delayCards += .3
+    })
+
+  </script>
   
 </body>
 </html>
